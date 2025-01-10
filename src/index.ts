@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import sequelize from "./utils/database"; // Импортируйте ваше соединение с базой данных
 import urlRoutes from "./routes/urlRoutes"; // Импортируйте маршруты
 
-const app = express();
+export const app = express();
 
 // Middleware для парсинга JSON
 app.use(bodyParser.json());

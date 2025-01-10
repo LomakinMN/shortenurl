@@ -18,9 +18,15 @@
     "sequelize": "^6.37.5"
   },
   "devDependencies": {
+    "@types/chai": "^5.0.1",
     "@types/express": "^5.0.0",
+    "@types/mocha": "^10.0.10",
     "@types/node": "^22.10.5",
+    "@types/supertest": "^6.0.2",
+    "chai": "^5.1.2",
+    "mocha": "^11.0.1",
     "nodemon": "^3.1.9",
+    "supertest": "^7.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3"
   }

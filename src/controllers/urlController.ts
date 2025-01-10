@@ -104,7 +104,7 @@ export const deleteShortUrl = async (
     }
 
     await url.destroy();
-    res.status(204).send();
+    res.status(204).json("url deleted successfully");
   } catch (error) {
     res.status(500).json({ error: "Internal server error" });
   }
