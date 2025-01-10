@@ -14,6 +14,14 @@ export const createShortUrl = async (
     res.status(400).json({ error: "Original URL is required" });
     return;
   }
+  if (alias && alias.length > 20) {
+    res.status(400).json({ error: "Alias must be up to 20 symbols" });
+    return;
+  }
+  if (alias && (await Url.findOne({ where: { alias } }))) {
+    res.status(400).json({ error: "Alias already exists" });
+    return;
+  }
 
   try {
     const shortUrl = alias || generateShortUrl();
