@@ -17,11 +17,14 @@ export const createShortUrl = async (
 
   try {
     const shortUrl = alias || generateShortUrl();
+    const expirationDate = expiresAt
+      ? new Date(expiresAt)
+      : new Date(Date.now() + 10 * 60 * 1000);
     const newUrl = await Url.create({
       originalUrl,
       shortUrl,
       alias,
-      expiresAt,
+      expiresAt: expirationDate,
     });
     res.status(201).json({ shortUrl: newUrl.shortUrl });
   } catch (error) {
